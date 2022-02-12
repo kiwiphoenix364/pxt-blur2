@@ -137,7 +137,7 @@ namespace Blur {
                     for (let y2 = 0; y2 < 120; y2++) {
                         buf[y] = image.getPixel(x2, y2)
                     }
-                        image.setRows(x2, buf)
+                        image1.setRows(x2, buf)
                         numwidth = size
                         numheight = size
                         for (let index = 0; index < 120 / numheight; index++) {
@@ -147,7 +147,7 @@ namespace Blur {
                                 if (160 - x < size) {
                                     numwidth = 160 - x
                                 }
-                                image.fillRect(x, y, numwidth, numheight, image.getPixel(x + numwidth / 2, y + numheight / 2))
+                                image.fillRect(x, y, numwidth, numheight, image1.getPixel(x + numwidth / 2, y + numheight / 2))
                                 x += size
                                 numwidth = size
                                 x = 0
