@@ -25,7 +25,7 @@ namespace Blur {
                             for (let index2 = 0; index2 < 160 / numwidth; index2++) {
                                 if (160 - x < size) {
                                     numwidth = 160 - x
-                                image.fillRect(x, y, numwidth, numheight, image.getPixel(1 + numwidth / 2, 1 + numheight / 2))
+                                image.fillRect(x, y, numwidth, numheight, image.getPixel(x + numwidth / 2, y + numheight / 2))
                                 x += size
                                 }
                                 numwidth = size
