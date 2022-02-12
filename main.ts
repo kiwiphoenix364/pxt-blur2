@@ -10,12 +10,12 @@ namespace Blur {
         const buf = Buffer.create(120)
         scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                     {
-                for (let x2 = 0; x2 < 160; x2++) {
-                    image.getRows(x2, buf)
-                    for (let y2 = 0; y2 < 120; y2++) {
-                        buf[y2] = image.getPixel(x2, y2)
+                for (let x = 0; x < 160; x++) {
+                    image.getRows(x, buf)
+                    for (let y = 0; y < 120; y++) {
+                        buf[y] = image.getPixel(x, y)
                     }
-                        image.setRows(x2, buf)
+                        image.setRows(x, buf)
                         numwidth = size
                         numheight = size
                         for (let index = 0; index < 120 / numheight; index++) {
