@@ -127,30 +127,30 @@ namespace Blur {
         let zLayer = 0
         let numwidth = 0
         let numheight = 0
-        let y2 = 0
-        let x2 = 0
+        let y = 0
+        let x = 0
         const buf = Buffer.create(120)
         scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                     {
-                for (let x = 0; x < 160; x++) {
-                    image.getRows(x, buf)
-                    for (let y = 0; y < 120; y++) {
-                        buf[y] = image.getPixel(x, y)
-                        image1.setRows(x, buf)
+                for (let x2 = 0; x2 < 160; x2++) {
+                    image.getRows(x2, buf)
+                    for (let y2 = 0; y2 < 120; y2++) {
+                        buf[y] = image.getPixel(x2, y2)
+                        image1.setRows(x2, buf)
                         numwidth = size
                         numheight = size
                         for (let index = 0; index < 120 / numheight; index++) {
-                            if (120 - y2 < size) {
-                                numheight = 120 - y2
+                            if (120 - y < size) {
+                                numheight = 120 - y
                             for (let index2 = 0; index2 < 160 / numwidth; index2++) {
-                                if (160 - x2 < size) {
-                                    numwidth = 160 - x2
+                                if (160 - x < size) {
+                                    numwidth = 160 - x
                                 }
-                                image.fillRect(x2, y2, numwidth, numheight, image1.getPixel(x2 + numwidth / 2, y2 + numheight / 2))
-                                x2 += size
+                                image.fillRect(x, y, numwidth, numheight, image1.getPixel(x + numwidth / 2, y + numheight / 2))
+                                x += size
                                 numwidth = size
-                                x2 = 0
-                                y2 += size
+                                x = 0
+                                y += size
                                 numheight = size
                             }
                                 }}}}
