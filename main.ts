@@ -146,30 +146,17 @@ namespace Blur {
                                 if (160 - x2 < size) {
                                     numwidth = 160 - x2
                                 }
-                                image1.fillRect(x2, y2, numwidth, numheight, image1.getPixel(x2 + numwidth / 2, y2 + numheight / 2))
+                                image.fillRect(x2, y2, numwidth, numheight, image1.getPixel(x2 + numwidth / 2, y2 + numheight / 2))
                                 x2 += size
                                 numwidth = size
                                 x2 = 0
                                 y2 += size
                                 numheight = size
                             }
-                                const buf = Buffer.create(120)
-                                scene.createRenderable(zLayer, (image1: Image, camera: scene.Camera) => {
-                                    {
-                                        for (let x = 0; x < 160; x++) {
-                                            image1.getRows(x, buf)
-                                            for (let y = 0; y < 120; y++) {
-                                                buf[y] = image1.getPixel(x, y)
-                                                image.setRows(x, buf)
-                                            }
-                                        }
                                 }}
-                                )}
-                        }
-                    }
-                }
-        )}
-        
+                                }
+                        })
+    }
     
     //% block
     export function PixelSizeAndForHowManyMs(size: number, time: number) {
