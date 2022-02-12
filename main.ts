@@ -136,8 +136,8 @@ namespace Blur {
                     image.getRows(x2, buf)
                     for (let y2 = 0; y2 < 120; y2++) {
                         buf[y] = image.getPixel(x2, y2)
-                        image.setRows(x2, buf)
                     }
+                        image.setRows(x2, buf)
                         numwidth = size
                         numheight = size
                         for (let index = 0; index < 120 / numheight; index++) {
