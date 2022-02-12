@@ -154,7 +154,7 @@ namespace Blur {
                                 numheight = size
                             }
                                 const buf = Buffer.create(120)
-                                scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
+                                scene.createRenderable(zLayer, (image1: Image, camera: scene.Camera) => {
                                     {
                                         for (let x = 0; x < 160; x++) {
                                             image1.getRows(x, buf)
