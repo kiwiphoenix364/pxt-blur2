@@ -155,9 +155,9 @@ namespace Blur {
                             }
                                 y2 = 0
                                 for (let x = 0; x < 160; x++) {
-                                    image1.getRows(x, buf)
+                                    image.getRows(x, buf)
                                     for (let y = 0; y < 120; y++) {
-                                        buf[y] = image1.getPixel(x, y)
+                                        buf[y] = image.getPixel(x, y)
                                         image.setRows(x, buf)
                                 }}
                             }
