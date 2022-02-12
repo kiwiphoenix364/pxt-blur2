@@ -153,14 +153,18 @@ namespace Blur {
                                 y2 += size
                                 numheight = size
                             }
-                                y2 = 0
-                                for (let x = 0; x < 160; x++) {
-                                    image.getRows(x, buf)
-                                    for (let y = 0; y < 120; y++) {
-                                        buf[y] = image.getPixel(x, y)
-                                        image.setRows(x, buf)
+                                const buf = Buffer.create(120)
+                                scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
+                                    {
+                                        for (let x = 0; x < 160; x++) {
+                                            image1.getRows(x, buf)
+                                            for (let y = 0; y < 120; y++) {
+                                                buf[y] = image1.getPixel(x, y)
+                                                image.setRows(x, buf)
+                                            }
+                                        }
                                 }}
-                            }
+                                )}
                         }
                     }
                 }
