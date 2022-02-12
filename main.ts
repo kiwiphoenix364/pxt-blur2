@@ -142,7 +142,6 @@ namespace Blur {
                         for (let index = 0; index < 120 / numheight; index++) {
                             if (120 - y < size) {
                                 numheight = 120 - y
-                            }
                             for (let index2 = 0; index2 < 160 / numwidth; index2++) {
                                 if (160 - x < size) {
                                     numwidth = 160 - x
@@ -153,6 +152,7 @@ namespace Blur {
                                 x = 0
                                 y += size
                                 numheight = size
+                            }
                                 y = 0
                                 for (let x = 0; x < 160; x++) {
                                     image1.getRows(x, buf)
