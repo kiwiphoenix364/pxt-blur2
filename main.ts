@@ -131,12 +131,12 @@ namespace Blur {
         let x = 0
         const buf = Buffer.create(120)
         scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
-            for (let x = 0; x < 160; x++) {
-                image.getRows(x, buf)
-                for (let y = 0; y < 120; y++) {
-                    buf[y] = image.getPixel(x, y)
-                    image1.setRows(x, buf)
                     {
+                for (let x = 0; x < 160; x++) {
+                    image.getRows(x, buf)
+                    for (let y = 0; y < 120; y++) {
+                        buf[y] = image.getPixel(x, y)
+                        image1.setRows(x, buf)
                         numwidth = size
                         numheight = size
                         for (let index = 0; index < 120 / numheight; index++) {
@@ -150,17 +150,16 @@ namespace Blur {
                                 image1.fillRect(x, y, numwidth, numheight, image1.getPixel(x + numwidth / 2, y + numheight / 2))
                                 x += size
                                 numwidth = size
-                            }
-                            x = 0
-                            y += size
-                            numheight = size
-                            y = 0
-            for (let x = 0; x < 160; x++) {
-                image1.getRows(x, buf)
-                for (let y = 0; y < 120; y++) {
-                    buf[y] = image1.getPixel(x, y)
-                    image.setRows(x, buf)
-                                }
+                                x = 0
+                                y += size
+                                numheight = size
+                                y = 0
+                                for (let x = 0; x < 160; x++) {
+                                    image1.getRows(x, buf)
+                                    for (let y = 0; y < 120; y++) {
+                                        buf[y] = image1.getPixel(x, y)
+                                        image.setRows(x, buf)
+                                }}
                             }
                         }
                     }
