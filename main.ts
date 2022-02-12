@@ -155,11 +155,11 @@ namespace Blur {
                             y += size
                             numheight = size
                             y = 0
-                            for (let x = 0; x < 160; x++) {
-                                image1.getRows(x, buf)
-                                for (let y = 0; y < 120; y++) {
-                                    buf[y] = image1.getPixel(x, y)
-                                    image.setRows(x, buf)
+            for (let x = 0; x < 160; x++) {
+                image1.getRows(x, buf)
+                for (let y = 0; y < 120; y++) {
+                    buf[y] = image1.getPixel(x, y)
+                    image.setRows(x, buf)
                                 }
                             }
                         }
