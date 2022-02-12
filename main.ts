@@ -31,6 +31,7 @@ namespace Blur {
                                 x = 0
                                 y += size
                                 numheight = size
+                                y = 0
                             }
                                 }}
                                 }}
