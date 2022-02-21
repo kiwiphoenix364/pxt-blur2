@@ -138,7 +138,7 @@ namespace Blur {
                 // Now "buf" contains a color value for the current pixel row 
                 // (it's actually a vertical column onscreen) where it can be modified.
                 for (let y = 0; y < 120; y++) {
-                    buf[y] = image.getPixel(x, y * 2 - 120)
+                    buf[y] = image.getPixel(x, y)
                 }
                 // Write the modified pixels back to the screen.
                 picturesprite.image.setRows(x, buf)
